@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Loan.App.Contracts",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Loan.App.ServiceLogics", "ServiceLogics\Simple.Loan.App.ServiceLogics.csproj", "{175D5979-93E6-46D9-B28D-F174F109B950}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Loan.App.Commons", "Commons\Simple.Loan.App.Commons.csproj", "{412CF528-1EF5-45C7-9A51-CBB99774BC22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{175D5979-93E6-46D9-B28D-F174F109B950}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{175D5979-93E6-46D9-B28D-F174F109B950}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{175D5979-93E6-46D9-B28D-F174F109B950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{412CF528-1EF5-45C7-9A51-CBB99774BC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412CF528-1EF5-45C7-9A51-CBB99774BC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412CF528-1EF5-45C7-9A51-CBB99774BC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412CF528-1EF5-45C7-9A51-CBB99774BC22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

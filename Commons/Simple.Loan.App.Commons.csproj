@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Validators\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Commons\Simple.Loan.App.Commons.csproj" />
     <ProjectReference Include="..\Contracts\Simple.Loan.App.Contracts.csproj" />
   </ItemGroup>
 
