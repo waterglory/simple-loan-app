@@ -13,19 +13,19 @@ namespace Simple.Loan.App.ServiceLogics
 {
     public class LoanApplicationService : ILoanApplicationService
     {
-        private ILoanApplicationStore _loanApplicationRepository;
+        private ILoanApplicationStore _loanApplicationStore;
         private IEnumerable<ILoanApplicationValidator> _loanApplicationValidators;
 
         private ICustomerProvider _customerProvider;
         private IFileStoreProvider _fileStoreProvider;
 
         public LoanApplicationService(
-            ILoanApplicationStore loanApplicationRepository,
+            ILoanApplicationStore loanApplicationStore,
             IEnumerable<ILoanApplicationValidator> loanApplicationValidators,
             ICustomerProvider customerProvider,
             IFileStoreProvider fileStoreProvider)
         {
-            _loanApplicationRepository = loanApplicationRepository;
+            _loanApplicationStore = loanApplicationStore;
             _loanApplicationValidators = loanApplicationValidators;
 
             _customerProvider = customerProvider;
@@ -70,7 +70,7 @@ namespace Simple.Loan.App.ServiceLogics
 
         public async Task<string> CheckOngoingApplication(string organizationNo)
         {
-            var ongoingApplication = await _loanApplicationRepository.GetOngoingLoanApplication(organizationNo.CleanUpOrganizationNo(), LoanApplicationStep.Verification);
+            var ongoingApplication = await _loanApplicationStore.GetOngoingLoanApplication(organizationNo.CleanUpOrganizationNo(), LoanApplicationStep.Verification);
             return ongoingApplication?.CaseNo;
         }
 
@@ -99,7 +99,7 @@ namespace Simple.Loan.App.ServiceLogics
             loanApplication.Id = Guid.Empty;
             loanApplication.CaseNo = GenerateCaseNo();
             loanApplication.CurrentStep = LoanApplicationStep.Verification;
-            await _loanApplicationRepository.SaveLoanApplication(loanApplication);
+            await _loanApplicationStore.SaveLoanApplication(loanApplication);
 
             await UpdateCustomer(loanApplication.Applicant);
 
@@ -107,11 +107,11 @@ namespace Simple.Loan.App.ServiceLogics
         }
 
         public Task<IEnumerable<LoanApplication>> GetAllLoanApplications() =>
-            _loanApplicationRepository.GetAllLoanApplications();
+            _loanApplicationStore.GetAllLoanApplications();
 
         public async Task<File> GetDocumentContent(Guid documentId)
         {
-            var document = await _loanApplicationRepository.GetDocument(documentId);
+            var document = await _loanApplicationStore.GetDocument(documentId);
             return await _fileStoreProvider.GetFile(document.FileRef);
         }
     }
