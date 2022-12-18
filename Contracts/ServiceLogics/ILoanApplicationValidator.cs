@@ -1,6 +1,6 @@
-﻿using Simple.Loan.App.Contracts.Service.Models.Loan;
+﻿using Simple.Loan.App.Contracts.Models.Loan;
 
-namespace Simple.Loan.App.Contracts.Service.Logics
+namespace Simple.Loan.App.Contracts.ServiceLogics
 {
     public interface ILoanApplicationValidator
     {

@@ -1,10 +1,10 @@
 ﻿using Simple.Loan.App.Commons.OrganizationNo;
+using Simple.Loan.App.Contracts.Models;
+using Simple.Loan.App.Contracts.Models.Loan;
 using Simple.Loan.App.Contracts.Providers;
-using Simple.Loan.App.Contracts.Service.Logics;
-using Simple.Loan.App.Contracts.Service.Logics.Results;
-using Simple.Loan.App.Contracts.Service.Models;
-using Simple.Loan.App.Contracts.Service.Models.Loan;
-using Simple.Loan.App.Contracts.Service.Stores;
+using Simple.Loan.App.Contracts.ServiceLogics;
+using Simple.Loan.App.Contracts.ServiceLogics.Results;
+using Simple.Loan.App.Contracts.Stores;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

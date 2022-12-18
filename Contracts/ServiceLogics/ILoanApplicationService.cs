@@ -1,11 +1,11 @@
-﻿using Simple.Loan.App.Contracts.Service.Logics.Results;
-using Simple.Loan.App.Contracts.Service.Models;
-using Simple.Loan.App.Contracts.Service.Models.Loan;
+﻿using Simple.Loan.App.Contracts.Models;
+using Simple.Loan.App.Contracts.Models.Loan;
+using Simple.Loan.App.Contracts.ServiceLogics.Results;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Simple.Loan.App.Contracts.Service.Logics
+namespace Simple.Loan.App.Contracts.ServiceLogics
 {
     public interface ILoanApplicationService
     {

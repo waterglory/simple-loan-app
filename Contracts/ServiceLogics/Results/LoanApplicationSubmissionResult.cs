@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Simple.Loan.App.Contracts.Service.Logics.Results
+namespace Simple.Loan.App.Contracts.ServiceLogics.Results
 {
     public class LoanApplicationSubmissionResult
     {

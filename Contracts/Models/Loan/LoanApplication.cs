@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Simple.Loan.App.Contracts.Service.Models.Loan
+namespace Simple.Loan.App.Contracts.Models.Loan
 {
     public class LoanApplication
     {

@@ -1,10 +1,10 @@
-﻿using Simple.Loan.App.Contracts.Service.Logics;
-using Simple.Loan.App.Contracts.Service.Models.Loan;
+﻿using Simple.Loan.App.Contracts.Models.Loan;
+using Simple.Loan.App.Contracts.ServiceLogics;
 using System;
 
 namespace Nordax.Bank.Recruitment.Domain.Validators
 {
-	public class AgeValidator : ILoanApplicationValidator
+    public class AgeValidator : ILoanApplicationValidator
 	{
 		public bool Validate(LoanApplication loanApplication, out string reason)
 		{

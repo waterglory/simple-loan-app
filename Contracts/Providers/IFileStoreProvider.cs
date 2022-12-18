@@ -1,4 +1,4 @@
-﻿using Simple.Loan.App.Contracts.Service.Models;
+﻿using Simple.Loan.App.Contracts.Models;
 using System.Threading.Tasks;
 
 namespace Simple.Loan.App.Contracts.Providers

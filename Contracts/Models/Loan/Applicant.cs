@@ -1,7 +1,11 @@
-﻿namespace Simple.Loan.App.Contracts.Service.Models
+﻿using System;
+
+namespace Simple.Loan.App.Contracts.Models.Loan
 {
-    public class Customer
+    public class Applicant
     {
+        public Guid Id { get; set; }
+
         public string OrganizationNo { get; set; }
 
         public string FirstName { get; set; }

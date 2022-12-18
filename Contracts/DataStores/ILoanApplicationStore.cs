@@ -1,9 +1,9 @@
-﻿using Simple.Loan.App.Contracts.Service.Models.Loan;
+﻿using Simple.Loan.App.Contracts.Models.Loan;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Simple.Loan.App.Contracts.Service.Stores
+namespace Simple.Loan.App.Contracts.DataStores
 {
     public interface ILoanApplicationStore
     {
