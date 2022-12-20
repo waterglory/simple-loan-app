@@ -1,4 +1,4 @@
-﻿namespace Simple.Loan.App.Contracts.Service.Models.Loan
+﻿namespace Simple.Loan.App.Contracts.Models.LoanApplication
 {
     public static class LoanApplicationStep
     {

@@ -1,4 +1,4 @@
-﻿using Simple.Loan.App.Contracts.Service.Models;
+﻿using Simple.Loan.App.Contracts.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

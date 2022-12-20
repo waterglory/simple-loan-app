@@ -1,4 +1,4 @@
-﻿using Simple.Loan.App.Contracts.Service.Models.Loan;
+﻿using Simple.Loan.App.Contracts.Models.LoanApplication;
 
 namespace Simple.Loan.App.Commons.OrganizationNo
 {

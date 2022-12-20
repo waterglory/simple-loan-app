@@ -1,11 +1,7 @@
-﻿using System;
-
-namespace Simple.Loan.App.Contracts.Service.Models.Loan
+﻿namespace Simple.Loan.App.Contracts.Models
 {
-    public class Applicant
+    public class Customer
     {
-        public Guid Id { get; set; }
-
         public string OrganizationNo { get; set; }
 
         public string FirstName { get; set; }

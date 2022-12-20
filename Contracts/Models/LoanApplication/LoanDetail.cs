@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Simple.Loan.App.Contracts.Service.Models.Loan
+namespace Simple.Loan.App.Contracts.Models.LoanApplication
 {
-    public class LoanInfo
+    public class LoanDetail
     {
         public Guid Id { get; set; }
 

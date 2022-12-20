@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Simple.Loan.App.Contracts.Service.Models.Loan
+namespace Simple.Loan.App.Contracts.Models.LoanApplication
 {
     public class Document
     {

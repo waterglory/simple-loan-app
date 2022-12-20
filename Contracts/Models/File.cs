@@ -1,4 +1,4 @@
-﻿namespace Simple.Loan.App.Contracts.Service.Models
+﻿namespace Simple.Loan.App.Contracts.Models
 {
     public class File
     {
