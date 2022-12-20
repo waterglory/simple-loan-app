@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Simple.Loan.App.Contracts.Models.Loan
+namespace Simple.Loan.App.Contracts.Models.LoanApplication
 {
     public class LoanApplication
     {
@@ -15,7 +15,7 @@ namespace Simple.Loan.App.Contracts.Models.Loan
 
         public Applicant Applicant { get; set; }
 
-        public LoanInfo Loan { get; set; }
+        public LoanDetail LoanDetail { get; set; }
 
         public List<Document> Documents { get; set; }
     }

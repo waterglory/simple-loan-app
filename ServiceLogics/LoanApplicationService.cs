@@ -1,10 +1,10 @@
 ﻿using Simple.Loan.App.Commons.OrganizationNo;
 using Simple.Loan.App.Contracts.Models;
-using Simple.Loan.App.Contracts.Models.Loan;
+using Simple.Loan.App.Contracts.Models.LoanApplication;
 using Simple.Loan.App.Contracts.Providers;
 using Simple.Loan.App.Contracts.ServiceLogics;
 using Simple.Loan.App.Contracts.ServiceLogics.Results;
-using Simple.Loan.App.Contracts.Stores;
+using Simple.Loan.App.Contracts.DataStores;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -13,19 +13,19 @@ namespace Simple.Loan.App.ServiceLogics
 {
     public class LoanApplicationService : ILoanApplicationService
     {
-        private ILoanApplicationStore _loanApplicationStore;
+        private ILoanApplicationRepository _loanApplicationRepository;
         private IEnumerable<ILoanApplicationValidator> _loanApplicationValidators;
 
         private ICustomerProvider _customerProvider;
         private IFileStoreProvider _fileStoreProvider;
 
         public LoanApplicationService(
-            ILoanApplicationStore loanApplicationStore,
+            ILoanApplicationRepository loanApplicationRepository,
             IEnumerable<ILoanApplicationValidator> loanApplicationValidators,
             ICustomerProvider customerProvider,
             IFileStoreProvider fileStoreProvider)
         {
-            _loanApplicationStore = loanApplicationStore;
+            _loanApplicationRepository = loanApplicationRepository;
             _loanApplicationValidators = loanApplicationValidators;
 
             _customerProvider = customerProvider;
@@ -70,7 +70,7 @@ namespace Simple.Loan.App.ServiceLogics
 
         public async Task<string> CheckOngoingApplication(string organizationNo)
         {
-            var ongoingApplication = await _loanApplicationStore.GetOngoingLoanApplication(organizationNo.CleanUpOrganizationNo(), LoanApplicationStep.Verification);
+            var ongoingApplication = await _loanApplicationRepository.GetOngoingLoanApplication(organizationNo.CleanUpOrganizationNo(), LoanApplicationStep.Verification);
             return ongoingApplication?.CaseNo;
         }
 
@@ -83,7 +83,7 @@ namespace Simple.Loan.App.ServiceLogics
         {
             if (loanApplication == null) throw new ArgumentNullException("LoanApplication");
             if (loanApplication.Applicant == null) throw new ArgumentNullException(nameof(loanApplication.Applicant));
-            if (loanApplication.Loan == null) throw new ArgumentNullException(nameof(loanApplication.Loan));
+            if (loanApplication.LoanDetail == null) throw new ArgumentNullException(nameof(loanApplication.LoanDetail));
             if (loanApplication.Documents == null) throw new ArgumentNullException(nameof(loanApplication.Documents));
 
             loanApplication.CleanUpOrganizationNo();
@@ -99,7 +99,7 @@ namespace Simple.Loan.App.ServiceLogics
             loanApplication.Id = Guid.Empty;
             loanApplication.CaseNo = GenerateCaseNo();
             loanApplication.CurrentStep = LoanApplicationStep.Verification;
-            await _loanApplicationStore.SaveLoanApplication(loanApplication);
+            await _loanApplicationRepository.SaveLoanApplication(loanApplication);
 
             await UpdateCustomer(loanApplication.Applicant);
 
@@ -107,11 +107,11 @@ namespace Simple.Loan.App.ServiceLogics
         }
 
         public Task<IEnumerable<LoanApplication>> GetAllLoanApplications() =>
-            _loanApplicationStore.GetAllLoanApplications();
+            _loanApplicationRepository.GetAllLoanApplications();
 
         public async Task<File> GetDocumentContent(Guid documentId)
         {
-            var document = await _loanApplicationStore.GetDocument(documentId);
+            var document = await _loanApplicationRepository.GetDocument(documentId);
             return await _fileStoreProvider.GetFile(document.FileRef);
         }
     }

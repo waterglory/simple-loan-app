@@ -1,11 +1,11 @@
-﻿using Simple.Loan.App.Contracts.Models.Loan;
+﻿using Simple.Loan.App.Contracts.Models.LoanApplication;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Simple.Loan.App.Contracts.DataStores
 {
-    public interface ILoanApplicationStore
+    public interface ILoanApplicationRepository
     {
         Task<Guid> SaveLoanApplication(LoanApplication model);
         Task<LoanApplication> GetOngoingLoanApplication(string organizationNo, params string[] ongoingSteps);

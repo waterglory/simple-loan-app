@@ -1,5 +1,5 @@
 ﻿using Simple.Loan.App.Contracts.Models;
-using Simple.Loan.App.Contracts.Models.Loan;
+using Simple.Loan.App.Contracts.Models.LoanApplication;
 using Simple.Loan.App.Contracts.ServiceLogics.Results;
 using System;
 using System.Collections.Generic;

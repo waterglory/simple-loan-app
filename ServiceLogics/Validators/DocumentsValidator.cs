@@ -1,4 +1,4 @@
-﻿using Simple.Loan.App.Contracts.Models.Loan;
+﻿using Simple.Loan.App.Contracts.Models.LoanApplication;
 using Simple.Loan.App.Contracts.ServiceLogics;
 
 namespace Nordax.Bank.Recruitment.Domain.Validators
