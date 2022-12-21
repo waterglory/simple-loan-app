@@ -6,6 +6,6 @@ namespace Simple.Loan.App.Contracts.Providers
 {
     public interface IOptionProvider
     {
-        Task<IEnumerable<BindingPeriod>> GetBindingPeriods();
+        Task<List<BindingPeriod>> GetBindingPeriods();
     }
 }
