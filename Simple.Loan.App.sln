@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Loan.App.Commons", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Loan.App.DataStores", "DataStores\Simple.Loan.App.DataStores.csproj", "{6B8003AE-F73D-49B5-85CD-7CEB65CD6B5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Loan.App.Providers", "Providers\Simple.Loan.App.Providers.csproj", "{4999FC56-A2BC-4C08-A18C-177B2A06EA16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6B8003AE-F73D-49B5-85CD-7CEB65CD6B5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B8003AE-F73D-49B5-85CD-7CEB65CD6B5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B8003AE-F73D-49B5-85CD-7CEB65CD6B5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4999FC56-A2BC-4C08-A18C-177B2A06EA16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4999FC56-A2BC-4C08-A18C-177B2A06EA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4999FC56-A2BC-4C08-A18C-177B2A06EA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4999FC56-A2BC-4C08-A18C-177B2A06EA16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
