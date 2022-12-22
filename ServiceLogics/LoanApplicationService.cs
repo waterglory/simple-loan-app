@@ -13,11 +13,11 @@ namespace Simple.Loan.App.ServiceLogics
 {
     public class LoanApplicationService : ILoanApplicationService
     {
-        private ILoanApplicationRepository _loanApplicationRepository;
-        private IEnumerable<ILoanApplicationValidator> _loanApplicationValidators;
+        private readonly ILoanApplicationRepository _loanApplicationRepository;
+        private readonly IEnumerable<ILoanApplicationValidator> _loanApplicationValidators;
 
-        private ICustomerProvider _customerProvider;
-        private IFileStoreProvider _fileStoreProvider;
+        private readonly ICustomerProvider _customerProvider;
+        private readonly IFileStoreProvider _fileStoreProvider;
 
         public LoanApplicationService(
             ILoanApplicationRepository loanApplicationRepository,
@@ -32,8 +32,7 @@ namespace Simple.Loan.App.ServiceLogics
             _fileStoreProvider = fileStoreProvider;
         }
 
-        private string GenerateCaseNo() =>
-            $"{DateTime.UtcNow.ToString("MMhhyymmddss000fff")}";
+        private string GenerateCaseNo() => DateTime.UtcNow.ToString("MMhhyymmddss000fff");
 
         private List<string> Validate(LoanApplication loanApplication)
         {
